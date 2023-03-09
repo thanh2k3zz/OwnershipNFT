@@ -1,0 +1,21 @@
+table tr {
+    border-bottom: 1px solid #53565d;
+}
+
+table tr td {
+    color: #e6e5e8;
+}
+
+
+table {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+.view-details h1{
+    color: #e6e5e8;
+    margin-top: 30px;
+}

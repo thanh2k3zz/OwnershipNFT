@@ -1,0 +1,64 @@
+.info {
+    margin-top: 50px;
+    padding: 24px 36px;
+    border-radius: 18px;
+    background-color: #343444;
+    /* max-width: 800px; */
+}
+
+
+
+.info h1 {
+    color: #e6e5e8;
+    font-size: 28px;
+}
+
+.info table tr {
+    border-bottom: 1px solid #53565d;
+}
+
+.info table tr td {
+    color: #e6e5e8;
+}
+
+.nft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+.block-history {
+    margin-top: 20px;
+    padding: 24px 36px;
+    border-radius: 18px;
+    background-color: #343444;
+    max-width: 800px;
+
+}
+
+.block-history p, input, button {
+    color: #e6e5e8;
+}
+
+.history h1 {
+    color: #e6e5e8;
+    font-size: 38px;
+}
+
+.block-history input {
+    background-color: #343444;
+    width: 100%;
+}
+
