@@ -1,0 +1,30 @@
+.info-item p {
+    width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+body > section > div:nth-child(2) > div.row > div > div > ul > form:nth-child(2) > li > button {
+    color: #fff;
+    border-bottom: 2px solid #0277c6;
+}
+
+.info-item .utxo {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #fff;
+}
+
+.info-item .utxo h5 span {
+    padding: 8px 10px;
+    color: #fff;
+    font-weight: 600;
+    background: #1f87ff;
+    /* margin-top: 30px; */
+    border-radius: 12px;
+}
+
+.info-item .utxo h5 {
+    margin-top: 18px;
+}

@@ -32,7 +32,7 @@
                     <ul class="menu-right">
                         <li><a href="">News</a></li>
                         <li><a href="">Explore</a></li>
-                        <li><a href="">Create NFT</a></li>
+                        <li><a href="{{url("http://localhost:3000")}}">Create NFT</a></li>
                         <li><a href="">Community</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>
@@ -72,28 +72,46 @@
                 <div style="margin-top: 50px" class="row product-item">
 
                     @foreach ($asset as $item)
-                        <div class="col-md-3">
-                            <a href="">
+                        <div class="col-md-3 asset-item">
+                            {{-- <a href=""> --}}
 
-                                <?php
-                                echo '<img src="https://ipfs.io/ipfs/' . htmlspecialchars(str_replace('ipfs:/', '',$item->onchain_metadata->image)) . '" />';
-                                ?>
-                                <h4>{{ $item->onchain_metadata->name }}</h4>
-                                <div style="justify-content: start;" class="ownedBy">
-                                    <a href="" class="user">
-                                        <img src="https://demothemesflat.com/axies/assets/images/avatar/avt-1.jpg"
-                                            alt="">
-                                        <div class="descUser">
-                                            <p class="posUser">Owner By</p>
-                                            <p class="nameUser">{{ $item->onchain_metadata->artist }}</p>
+                                @if (!empty($item->onchain_metadata))
+                                    <?php
+                                    echo '<img src="https://ipfs.io/ipfs/' . htmlspecialchars(str_replace('ipfs:/', '',$item->onchain_metadata->image)) . '" />';
+                                    // echo '<video controls="" autoplay="" name="media">
+                                    //     <source src="https://ipfs.io/ipfs/' . htmlspecialchars(str_replace('ipfs:/', '',$item->onchain_metadata->image)) . '" type="audio/mpeg">
+                                    // </video>';
+                                    // <video controls="" autoplay="" name="media">
+                                    //     <source src="https://ipfs.io/ipfs/' . htmlspecialchars(str_replace('ipfs:/', '',$item->onchain_metadata->image)) . '" type="audio/mpeg">
+                                    // </video>
+                                    ?>
+                                
+                                <h4>{{$item->onchain_metadata->name}}</h4>
+                                    
+                                    
+
+                                    <div class="buttonProduct">
+                                        <svg class="h-3 w-3 text-sm font-medium text-red-500" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 40" version="1.1" fill="currentColor" width="22" height="24"><path style="fill-rule: evenodd; stroke-width: 1.45536" d="M 15.4375 -0.10546875 L 9.1875 15.783203 L 0.015625 15.783203 L 0.015625 20.822266 L 7.2070312 20.822266 L 5.53125 25.083984 L 0.015625 25.083984 L 0.015625 30.123047 L 3.5488281 30.123047 L 0.015625 39.105469 L 5.0976562 39.105469 L 8.6386719 30.123047 L 27.353516 30.123047 L 30.894531 39.105469 L 35.976562 39.105469 L 32.443359 30.123047 L 35.976562 30.123047 L 35.976562 25.083984 L 30.460938 25.083984 L 28.785156 20.822266 L 35.976562 20.822266 L 35.976562 15.783203 L 26.804688 15.783203 L 20.554688 -0.10546875 L 15.4375 -0.10546875 z M 17.996094 6.3847656 L 21.701172 15.783203 L 14.291016 15.783203 L 17.996094 6.3847656 z M 12.304688 20.822266 L 23.6875 20.822266 L 25.367188 25.083984 L 10.625 25.083984 L 12.304688 20.822266 z "></path></svg>
+                                        <div class="status-button">
+                                            <a class="history" href="">History</a>
+                                            <a class="detail" href="">Detail</a>
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                @else
+                                    <img src="{{asset('/assets/img/anhloihienthi.png')}}"
+                                        alt="">
+                                <h4>Name error</h4>
+
+                                
                                 <div class="buttonProduct">
-                                    <a href="">Buy Now</a>
-                                    <a href="{{url("/result-search?key1={$item->asset_name}&key2={$item->policy_id}")}}">View History</a>
+                                    <svg class="h-3 w-3 text-sm font-medium text-red-500" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 40" version="1.1" fill="currentColor" width="22" height="24"><path style="fill-rule: evenodd; stroke-width: 1.45536" d="M 15.4375 -0.10546875 L 9.1875 15.783203 L 0.015625 15.783203 L 0.015625 20.822266 L 7.2070312 20.822266 L 5.53125 25.083984 L 0.015625 25.083984 L 0.015625 30.123047 L 3.5488281 30.123047 L 0.015625 39.105469 L 5.0976562 39.105469 L 8.6386719 30.123047 L 27.353516 30.123047 L 30.894531 39.105469 L 35.976562 39.105469 L 32.443359 30.123047 L 35.976562 30.123047 L 35.976562 25.083984 L 30.460938 25.083984 L 28.785156 20.822266 L 35.976562 20.822266 L 35.976562 15.783203 L 26.804688 15.783203 L 20.554688 -0.10546875 L 15.4375 -0.10546875 z M 17.996094 6.3847656 L 21.701172 15.783203 L 14.291016 15.783203 L 17.996094 6.3847656 z M 12.304688 20.822266 L 23.6875 20.822266 L 25.367188 25.083984 L 10.625 25.083984 L 12.304688 20.822266 z "></path></svg>
+                                    <div class="status-button">
+                                        <a class="history" href="">History</a>
+                                        <a class="detail" href="">Detail</a>
+                                    </div>
                                 </div>
-                            </a>
+                                @endif
+                            {{-- </a> --}}
                         </div>
                     @endforeach
 

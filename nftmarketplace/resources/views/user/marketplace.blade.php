@@ -53,38 +53,7 @@
     </div> -->
     <!-- Product History -->
 
-    <section>
-        <div class="container">
-            <div class="row product-item">
 
-                @foreach ($nfts as $item)
-                    {{-- @dd($item->id) --}}
-                <div class="col-md-3">
-                    <a href="{{url("/nft/{$item->id}")}}">
-    
-                        <img src="{{ asset('storage/' .$item->feature_image_path.'/'.$item->feature_image_name)}}" class="card-img-top" alt="">
-                        <h4>{{$item->token_name}}</h4>
-                        <div class="ownedBy">
-                            <a href="" class="user">
-                                <img src="https://demothemesflat.com/axies/assets/images/avatar/avt-1.jpg" alt="">
-                                <div class="descUser">
-                                    <p class="posUser">Owner By</p>
-                                    <p class="nameUser">Willam Jackson</p>
-                                </div>
-                            </a>
-                            <h6 class="price">4.99 ETH</h6>
-                        </div>
-                        <div class="buttonProduct">
-                            <a href="">Buy Now</a>
-                            <a href="{{url("/nft/{$item->id}")}}">View History</a>
-                        </div>
-                    </a>
-                </div>
-                @endforeach
-
-            </div>
-        </div>
-    </section>
 
 <script src="{{url('assets/js/wallet.js')}}"></script>
     

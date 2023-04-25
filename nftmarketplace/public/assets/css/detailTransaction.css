@@ -1,21 +1,44 @@
-table tr {
-    border-bottom: 1px solid #53565d;
+.view-details {
+    margin-top: 50px;
+    padding: 24px 36px;
+    border-radius: 18px;
+    background-color: #343444;
+    margin-top: 50px;
 }
 
-table tr td {
-    color: #e6e5e8;
+.input {
+    margin-bottom: 50px;
+}
+
+.input h3, p {
+    color: #fff;
+
+}
+
+.output {
+    color: #fff;
 }
 
 
-table {
-    width: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 40px;
+.title-tst {
+    margin: 50px 0;
 }
 
-.view-details h1{
-    color: #e6e5e8;
-    margin-top: 30px;
+
+.title-tst h1,p {
+    text-align: center;
+    
+}
+
+.title-tst h1 {
+    color: #fff;
+}
+
+.title-tst p {
+    font-style: italic;
+    color: #ccc;
+}
+
+body > section > div > div > div > div > div > div.table-responsive > table > tbody > tr > th > svg {
+    color: #fff !important;
 }

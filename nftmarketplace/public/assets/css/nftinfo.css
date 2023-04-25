@@ -27,6 +27,21 @@
     align-items: center;
 }
 
+.nft img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+.history > p {
+    color: #8d8d8d;
+    font-size: 14px;
+    font-weight: 500;
+    width: 800px;
+}
+
+
+
 
 
 
@@ -61,4 +76,38 @@
     background-color: #343444;
     width: 100%;
 }
+
+.info-product button {
+    margin: 12px;
+}
+
+.block-history input {
+    color: #1f87ff;
+
+}
+
+
+/* Fix last owner*/
+
+.info table tr td p {
+    width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* Fix hien thi nft */
+
+body > section > div > div > div.col-md-4.nft > video {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+body > section > div:nth-child(2) > div > div.col-md-4.nft > iframe {
+    background-color: #ffffff;
+}
+
+
 
