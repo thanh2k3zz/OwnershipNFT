@@ -11,131 +11,131 @@ use App\Models\nft;
 class TransactionController extends Controller
 {
     // Blockfrost API
-    // public function showNFT()
-    //     {
-    //     $headers = array(
-    //         'http' => array(
-    //             'method' => 'GET',
-    //             'header' => 'project_id: mainnettClW67e7zjxBTdjgynNwmGsvyz5DCMmC'
-    //             // 'header' => 'project_id: preprodARqAklczYCnLKURn4cCtrIvfzPKHPgpS'
-    //         )
-    //     );
-
-    //     // Get information
-    //     $policyID = request()->key2;
-    //     $asset_name = request()->key1;
-    //     $str = request()->key2 . request()->key1;
-    //     $context = stream_context_create($headers);
-    //     // query info NFT
-    //     $jsonNFT = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/assets/{$str}", false, $context);
-    //     $NFT = json_decode($jsonNFT);
-
-    //     $jsontransactions = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/assets/{$str}/transactions", false, $context);
-    //     $transactions = json_decode($jsontransactions);
-
-
-    //     // Get date NFT 
-
-    //     $jsonNftHistory = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/assets/{$str}/history", false, $context);
-    //     $NFThistory = json_decode($jsonNftHistory);
-
-    //     foreach ($NFThistory as $item) {
-    //         if ($item->action == "minted") {
-    //             $hash = $item->tx_hash;
-    //         }
-    //     }
-
-    //     $jsontsx = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/txs/{$hash}", false, $context);
-    //     $NFTtsx = json_decode($jsontsx);
-
-    //     // Last owner
-    //     $url = "https://api.koios.rest/api/v0/asset_nft_address?_asset_policy={$policyID}&_asset_name={$asset_name}";
-    //     // dd($policyID, $asset_name);
-    //     $ch = curl_init();
-
-    //     curl_setopt($ch, CURLOPT_URL, $url);
-    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-    //     $headers = array(
-    //         'accept: application/json'
-    //     );
-
-    //     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-    //     $result = curl_exec($ch);
-
-    //     curl_close($ch);
-
-    //     $data = json_decode($result, true);
-
-    
-
-
-
-    //     $url = 'https://api.koios.rest/api/v0/asset_summary?_asset_policy=f6c296be39a6be8507e2bf42af2cef9bff18b156311d77325035c3df&_asset_name=436c75624d61727469616e34393330';
-
-    //     $ch = curl_init();
-        
-    //     curl_setopt($ch, CURLOPT_URL, $url);
-    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        
-    //     $headers = array(
-    //         'accept: application/json'
-    //     );
-        
-    //     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        
-    //     $result = curl_exec($ch);
-        
-    //     curl_close($ch);
-        
-    //     // echo $result;
-        
-    //     $assetSummary = json_decode($result, true);
-    //     return view('user.search', compact('NFT', 'transactions', 'NFTtsx', 'data', 'assetSummary'));
-    // }
-
-    public function showNFT(){
+    public function showNFT()
+        {
         $headers = array(
             'http' => array(
                 'method' => 'GET',
-            // 'header' => 'project_id: mainnettClW67e7zjxBTdjgynNwmGsvyz5DCMmC'
-                'header' => 'project_id: preprodARqAklczYCnLKURn4cCtrIvfzPKHPgpS'
+                'header' => 'project_id: mainnettClW67e7zjxBTdjgynNwmGsvyz5DCMmC'
+                // 'header' => 'project_id: preprodARqAklczYCnLKURn4cCtrIvfzPKHPgpS'
             )
         );
 
         // Get information
         $policyID = request()->key2;
         $asset_name = request()->key1;
-        $str = request()->key2.request()->key1;
+        $str = request()->key2 . request()->key1;
         $context = stream_context_create($headers);
         // query info NFT
-        $jsonNFT = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/assets/{$str}", false, $context);
+        $jsonNFT = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/assets/{$str}", false, $context);
         $NFT = json_decode($jsonNFT);
 
-        $jsontransactions = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/assets/{$str}/transactions", false, $context);
+        $jsontransactions = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/assets/{$str}/transactions", false, $context);
         $transactions = json_decode($jsontransactions);
 
 
         // Get date NFT 
 
-        $jsonNftHistory = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/assets/{$str}/history", false, $context);
+        $jsonNftHistory = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/assets/{$str}/history", false, $context);
         $NFThistory = json_decode($jsonNftHistory);
 
         foreach ($NFThistory as $item) {
-            if($item->action == "minted"){
+            if ($item->action == "minted") {
                 $hash = $item->tx_hash;
             }
         }
 
-        $jsontsx = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/txs/{$hash}", false, $context);
+        $jsontsx = file_get_contents("https://cardano-mainnet.blockfrost.io/api/v0/txs/{$hash}", false, $context);
         $NFTtsx = json_decode($jsontsx);
 
         // Last owner
+        $url = "https://api.koios.rest/api/v0/asset_nft_address?_asset_policy={$policyID}&_asset_name={$asset_name}";
+        // dd($policyID, $asset_name);
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $headers = array(
+            'accept: application/json'
+        );
+
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+
+        curl_close($ch);
+
+        $data = json_decode($result, true);
+
+    
 
 
-        return view('user.search', compact('NFT', 'transactions', 'NFTtsx'));
+
+        $url = 'https://api.koios.rest/api/v0/asset_summary?_asset_policy=f6c296be39a6be8507e2bf42af2cef9bff18b156311d77325035c3df&_asset_name=436c75624d61727469616e34393330';
+
+        $ch = curl_init();
+        
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        
+        $headers = array(
+            'accept: application/json'
+        );
+        
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        
+        $result = curl_exec($ch);
+        
+        curl_close($ch);
+        
+        // echo $result;
+        
+        $assetSummary = json_decode($result, true);
+        return view('user.search', compact('NFT', 'transactions', 'NFTtsx', 'data', 'assetSummary'));
     }
+
+    // public function showNFT(){
+    //     $headers = array(
+    //         'http' => array(
+    //             'method' => 'GET',
+    //         // 'header' => 'project_id: mainnettClW67e7zjxBTdjgynNwmGsvyz5DCMmC'
+    //             'header' => 'project_id: preprodARqAklczYCnLKURn4cCtrIvfzPKHPgpS'
+    //         )
+    //     );
+
+    //     // Get information
+    //     $policyID = request()->key2;
+    //     $asset_name = request()->key1;
+    //     $str = request()->key2.request()->key1;
+    //     $context = stream_context_create($headers);
+    //     // query info NFT
+    //     $jsonNFT = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/assets/{$str}", false, $context);
+    //     $NFT = json_decode($jsonNFT);
+
+    //     $jsontransactions = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/assets/{$str}/transactions", false, $context);
+    //     $transactions = json_decode($jsontransactions);
+
+
+    //     // Get date NFT 
+
+    //     $jsonNftHistory = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/assets/{$str}/history", false, $context);
+    //     $NFThistory = json_decode($jsonNftHistory);
+
+    //     foreach ($NFThistory as $item) {
+    //         if($item->action == "minted"){
+    //             $hash = $item->tx_hash;
+    //         }
+    //     }
+
+    //     $jsontsx = file_get_contents("https://cardano-preprod.blockfrost.io/api/v0/txs/{$hash}", false, $context);
+    //     $NFTtsx = json_decode($jsontsx);
+
+    //     // Last owner
+
+
+    //     return view('user.search', compact('NFT', 'transactions', 'NFTtsx'));
+    // }
 
 
 
