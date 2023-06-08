@@ -29,17 +29,17 @@
                     </div>
 
                     <ul class="menu-right">
-                        <li><a href="">News</a></li>
-                        <li><a href="">Explore</a></li>
-                        <li><a href="{{url("http://localhost:3000")}}">Create NFT</a></li>
-                        <li><a href="">Community</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="{{url('/')}}">Home</a></li>
+                        <li><a href="{{url("/search")}}">Search</a></li>
+                        <li><a href="{{url("http://localhost:3000/createNFT")}}">Create NFT</a></li>
+                        <li><a href="{{url("/track")}}">Track</a></li>
+                        <li><a href="{{url("/query-all-nft")}}">Check Assets</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4">
                     <div class="setting">
-                        <a class="connectwallet" href=""> <i class="ti ti-wallet"></i> Wallet Connect</a>
+                        {{-- <a class="connectwallet" href=""> <i class="ti ti-wallet"></i> Wallet Connect</a> --}}
                         <a href=""> <i class="ti ti-shopping-cart"><sup>2</sup></i></a>
                         <a href=""> <i class="ti ti-bell"><sup>1</sup></i></a>
                     </div>
@@ -53,13 +53,13 @@
         <div class="row slider">
             <div class="col-md-6 general">
                 <h1 class="h1first">Discover, find</h1>
-                <h1 class="h1second">Sell extraordinary</h1>
-                <h1 class="h1third">Monster NFTs</h1>
-                <p>Marketplace For Monster Character Collections Non Fungible Token NFTs</p>
+                <h1 class="h1second">Registering</h1>
+                <h1 class="h1third">Digital Copyright</h1>
+                <p>Tracking ownership of digital artworks based on Blockchain platform</p>
 
                 <div class="buttonSlider">
-                    <a href="">Explore</a>
-                    <a href="">Create</a>
+                    <a href="#howitworks">Explore</a>
+                    <a href="{{url("http://localhost:3000/createNFT")}}">Create</a>
                 </div>
             </div>
 
@@ -103,7 +103,7 @@
                     <img src="{{asset('assets/img/itworks.png')}}" alt="">
                 </div>
 
-                <div class="col-md-6">
+                <div id="howitworks" class="col-md-6">
                     <h3>How It Works</h3>
                     <h6>Secure your product future in 3 steps</h6>
                     <div class="stepWork">
@@ -273,11 +273,10 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Company name
+                            <i class="fas fa-gem me-3"></i>GuaranteeNFT
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
+                            Tracking ownership of digital artworks based on Blockchain platform.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -289,13 +288,13 @@
                             Products
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Angular</a>
+                            <a href="#!" class="text-reset">Typescript</a>
                         </p>
                         <p>
                             <a href="#!" class="text-reset">React</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Vue</a>
+                            <a href="#!" class="text-reset">NextJS</a>
                         </p>
                         <p>
                             <a href="#!" class="text-reset">Laravel</a>
@@ -328,12 +327,12 @@
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p><i class="fas fa-home me-3"></i> Ha Noi, Vietnam</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            info@example.com
+                            khuatthanh340@gmail.com
                         </p>
-                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-phone me-3"></i> + 03 250 456 33</p>
                         <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
                     </div>
                     <!-- Grid column -->

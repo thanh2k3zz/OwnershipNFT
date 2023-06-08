@@ -89,4 +89,6 @@
 
 @push('utxos')
     <link rel="stylesheet" href="{{ url('assets/css/utxos.css') }}">
+    <link rel="stylesheet" href="{{url('./assets/themify-icons/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/img/Logo.png')}}">
 @endpush

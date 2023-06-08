@@ -39,7 +39,7 @@
 
                 <div class="col-md-4">
                     <div class="setting">
-                        <a href=""> <i class="ti ti-wallet"></i> Wallet Connect</a>
+                        {{-- <a href=""> <i class="ti ti-wallet"></i> Wallet Connect</a> --}}
                         <a href=""> <i class="ti ti-shopping-cart"><sup>2</sup></i></a>
                         <a href=""> <i class="ti ti-bell"><sup>1</sup></i></a>
                     </div>

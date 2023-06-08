@@ -86,7 +86,8 @@
                         <ul>
 
                             <li><button href="{{url('/view-detail-nft')}}">Summary</button></li>
-                            <form action="{{url("/detail-tst/utxos/{$view_detail_tst->hash}")}}" method="get">
+                            {{-- <form action="{{url("/detail-tst/utxos/{$view_detail_tst->hash}")}}" method="get"> --}}
+                            <form action="{{url("/mainnet-detail-tst/utxos/{$view_detail_tst->hash}")}}" method="get">
                                 <li><button type="submit">UTXO</button></li>
                             </form>
                             <form action="{{url("/detail-tst/utxos/{$view_detail_tst->hash}")}}" method="get">

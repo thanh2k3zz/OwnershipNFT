@@ -50,15 +50,6 @@
     </header>
     <!-- End header -->
 
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2><i class="ti ti-arrow-left">Back</i></h2>
-            </div>
-        </div>
-    </div> -->
-    <!-- Product History -->
-
     <section>
         <div class="container">
             <div class="row history">
@@ -68,7 +59,7 @@
 
                 <div class="col-md-6 info-product">
                     <div class="form-group">
-                        <form action="{{ url('/result-search') }}" method="get" class="form-inline">
+                        <form action="{{ url('/result-search-mainnet') }}" method="get" class="form-inline">
                             <div class="form-control">
                                 <label for="contract-address">Asset Name</label>
                                 <input type="text" class="form-control " name="key1" placeholder="0xx...">
@@ -140,7 +131,7 @@
                                     <td>{{ gmdate('r', $NFTtsx->block_time) }}</td>
                                 </tr>
 
-                                {{-- <tr>
+                                <tr>
                                     <td>Last Owner</td>
                                     <td>
                                         <p>
@@ -148,16 +139,16 @@
                                         </p>
                                         
                                     </td>
-                                </tr> --}}
+                                </tr> 
 
-                                {{-- <tr>
+                                <tr>
                                     <td>Ownership transfers</td>
                                     <td>
                                         @foreach ($assetSummary as $itemOut)
                                             {{$itemOut['total_transactions']}}
                                         @endforeach
                                     </td>
-                                </tr> --}}
+                                </tr>
                             </tbody>
                         </table>
 
@@ -224,18 +215,13 @@
 
                         @foreach ($transactions as $transaction)
                             <div class="block-history">
-                                <form action="{{ url('/view-detail-nft') }}" method="GET">
+                                <form action="{{ url('/mainnet-view-detail-nft') }}" method="GET">
                                     <p style="font-style: italic;"> {{ gmdate('r', $transaction->block_time) }}</p>
                                     <p>
                                         Tx hash:
                                         <input type="text" name="tx_hash" value="{{ $transaction->tx_hash }}">
                                     </p>
-
-                                    {{-- <p>Block height: {{ $transaction->block_height }}</p> --}}
-                                    {{-- <div class="button"> --}}
-
                                     <button class="btn btn-primary">View detail</button>
-                                    {{-- </div> --}}
                                 </form>
                             </div>
                         @endforeach
@@ -247,11 +233,6 @@
 
         @endif
     </section>
-
-
-
-
-
     <script src="{{ url('assets/js/test.js') }}"></script>
 </body>
 

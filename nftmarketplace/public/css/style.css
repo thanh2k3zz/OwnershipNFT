@@ -16,7 +16,7 @@ a {
 }
 
 body {
-    background-color: #011627 !important;
+    background-color: #14141f !important;
 }
 
 
@@ -28,12 +28,6 @@ header{
     align-items: center;
 }
 
-
-
-
-.history {
-    margin-top: 50px;
-}
 
 
 .artwork {
@@ -156,8 +150,6 @@ header{
     color: #ccc;
     font-size: 18px;
     text-decoration: none;
-    padding: 12px 14px;
-    border: 2px solid #5142FC;
     border-radius: 30px;
     font-weight: 400;
 }
@@ -216,6 +208,10 @@ section  .container .product-item {
     display: flex;
     justify-content: space-between;
     margin-top: 28px;
+}
+
+.status-button {
+    display: flex;
 }
 
 .status-button a {
@@ -348,7 +344,7 @@ section {
     /* margin: 50px 0; */
     margin-top: 50px;
     /* margin-bottom: 70px; */
-    background-color: #000;
+    background-color: #14141f;
 }
 
 section h4 {
