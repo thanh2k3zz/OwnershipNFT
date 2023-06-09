@@ -19,37 +19,52 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header id="header">
 
         <div class="container">
             <div class="row menu">
-                <div class="col-md-8 menu-left">
+                <div class="col-md-3 logo-block">
                     <div class="logo">
-                        <img src="./assets/img/Logo.png" alt="">
-                        <h1>SALT</h1>
+                        <img src="./assets/img/ownft.jpg" alt="">
                     </div>
-
-                    <ul class="menu-right">
+                </div>
+                
+                <div id="menu-block" class="col-md-9 menu-block">
+                    <ul class="menu-right-1">
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{url("/search")}}">Search</a></li>
-                        <li><a href="{{url("http://localhost:3000/createNFT")}}">Create NFT</a></li>
+                        <li><a href="{{url("/update")}}">Create</a></li>
                         <li><a href="{{url("/track")}}">Track</a></li>
-                        <li><a href="{{url("/query-all-nft")}}">Check Assets</a></li>
+                        <li><a href="{{url("/query-all-nft")}}">Assets</a></li>
                     </ul>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="setting">
-                        {{-- <a class="connectwallet" href=""> <i class="ti ti-wallet"></i> Wallet Connect</a> --}}
-                        <a href=""> <i class="ti ti-shopping-cart"><sup>2</sup></i></a>
-                        <a href=""> <i class="ti ti-bell"><sup>1</sup></i></a>
-                    </div>
+                    <ul  onclick="showMenuCollapse()" class="menu-right-2">
+                        <li>
+                            <a href="#!"><i class="ti-menu"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </header>
 
-    <section>
+    <section id="menu-collapse-block" class="menu-collapse-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="menu-collapse">
+                        <li><a href="{{url('/')}}">Home</a></li>
+                        <li><a href="{{url("/search")}}">Search</a></li>
+                        <li><a href="{{url("/update")}}">Create</a></li>
+                        <li><a href="{{url("/track")}}">Track</a></li>
+                        <li><a href="{{url("/query-all-nft")}}">Assets</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="content">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 block-search">
@@ -124,6 +139,7 @@
         </div>
     </section>
 
+    <script src="{{url('/assets/js/main.js')}}"></script>
 
 </body>
 

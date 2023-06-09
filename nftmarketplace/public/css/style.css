@@ -98,30 +98,40 @@ header{
 }
 
 .logo img {
-    width: 120px;
+    width: 150px;
     height: auto;
     border-radius: 275px;
     object-fit: contain;
 }
 
-.logo h1 {
-    color: #fff;
-    font-size: 30px;
-    font-family: inherit;
-    font-weight: bold;
+.menu-block {
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+    align-items: center;
 }
 
-.menu-right {
+.menu-block ul li {
+    list-style-type: none;
+}
+
+.menu-block a i {
+    /* display: none; */
+}
+
+.menu-right-2 {
+    margin-bottom: 0;
+    display: none;
+}
+
+.menu-right-1 {
     display: flex;
     align-items: center;
     margin-bottom: 0;
 }
 
-.menu-right li {
-    list-style-type: none;
-}
 
-.menu-right li a {
+.menu-right-1 li a {
     text-decoration: none;
     color: #fff;
     padding: 10px 12px;
@@ -130,45 +140,36 @@ header{
     font-size: 18px;
 }
 
-.menu .col-md-4 {
-    display: flex;
-    align-items: center;
-    justify-content: end;
+/* Menu collapse */
+
+.menu-collapse-block {
+    background-color: #000;
+    margin-top: 0;
+    display: none;
 }
 
-.setting {
-    display: flex;
-    align-items: center;
-    justify-content: end;
+
+
+.menu-collapse li {
+    list-style-type: none;
+    padding: 10px 12px;
 }
 
-.setting a {
-    margin-left: 10px;
-}
-
-.setting a:nth-child(1) {
-    color: #ccc;
-    font-size: 18px;
+.menu-collapse li a {
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: 400;
-}
-
-.setting a .ti-shopping-cart, .ti-bell {
     color: #fff;
-    font-size: 25px;
-    padding: 3px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 18px;
+    padding-right: 100%;
+    font-weight: 500;
 }
 
-.setting a i {
-    padding-right: 3px;
+.menu-collapse li a:hover {
+    background-color: #14141f;
+
 }
 
-.setting a i sup{
-    background: red;
-    border-radius: 20px;
-    padding: 1px 4px;
-}
 
 /* .setting a:hover {
     color: #fff;
@@ -443,7 +444,7 @@ section h4 {
 }
 
 .container .slider .buttonSlider {
-
+    display: flex;
     margin-top: 30px;
 }
 
@@ -546,7 +547,7 @@ section h4 {
 
 
 .imgHowitworks img {
-    width: 500px;
+    width: 100%;
     height: auto;
     object-fit: contain;
 }
@@ -588,4 +589,81 @@ body > footer > section > div > div > div > h6, p, a {
 
 body > footer > section > div > div > div > p > a {
     text-decoration: none;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width:767px) {
+    .menu {
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    .menu-right-1 {
+        display: none;
+    }
+
+    .menu-right-2 {
+        display: block;
+        padding: 12px;
+    }
+
+    .logo-block {
+        width: 160px;
+    }
+
+    .menu-block {
+        width: 50px;
+    }
+
+    .container .slider h1 {
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #fff;
+}
+
+    .container .slider p {
+        font-size: 15px;
+    }
+
+    .container .slider .buttonSlider a {
+    padding: 9px 26px;
+    font-size: 14px;
+}
+    .imgSlider {
+        display: none;
+    }
+
+    .container .slider {
+        margin: 0;
+        padding: 0;
+    }
+
+    .sc-box-icon {
+        margin-top: 16px;
+    }
+
+    /* .menu-collapse-block {
+    display: block;
+} */
+
+
+}
+
+@media screen and (max-width:1023px) {
+    .container .slider h1 {
+    font-size: 33px;
+    line-height: 40px;
+    }
+
+    .container .slider p {
+        font-size: 17px;
+    }
+
+    .container .slider .buttonSlider a {
+    padding: 9px 30px;
+    font-size: 14px;
+}
 }

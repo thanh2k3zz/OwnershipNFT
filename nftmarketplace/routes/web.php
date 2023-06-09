@@ -90,5 +90,10 @@ Route::get('/check', function () {
 // Statistics market
 Route::get('/statistics ', [TransactionController::class, 'statistics']);
 
+// Coming soon
+
+Route::get('/update', function(){
+    return view('client.comingsoon');
+});
 
 
